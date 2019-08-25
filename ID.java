@@ -2,7 +2,7 @@ package com.tutorial.main;
 
 public enum ID {
 
-	Player();
+	Player(), BasicEnemy();
 //	Player2();
 // 	Enemy();
 }
