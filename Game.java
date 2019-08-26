@@ -14,7 +14,7 @@ public class Game extends Canvas implements Runnable{
 	private Thread thread;
 	
 	private boolean running = false;
-	
+	private Spawn spawner;
 	private Random r;
 	private Handler handler; 
 	
@@ -28,13 +28,15 @@ public class Game extends Canvas implements Runnable{
 		new Window(WIDTH, HEIGHT, "Wave", this);
 		 
 		hud = new HUD();
+
+		spawner = new Spawn(handler, hud);
 		
 		r = new Random();
 		
 		handler.addObject(new Player(WIDTH/2 - 32, HEIGHT/2 - 32, ID.Player, handler));	
-		for(int i = 0; i<6; i++)
-			handler.addObject(new BasicEnemy(r.nextInt(WIDTH), r.nextInt(HEIGHT), ID.BasicEnemy, handler));	
-   		   
+//		for(int i = 0; i<6; i++)
+		handler.addObject(new BasicEnemy(r.nextInt(WIDTH), r.nextInt(HEIGHT), ID.BasicEnemy, handler));	
+//		handler.addObject(new BasicEnemy(r.nextInt(Game.WIDTH), r.nextInt(Game.HEIGHT), ID.BasicEnemy, handler));    
 	}
 	
 	public synchronized void start() {
@@ -46,7 +48,7 @@ public class Game extends Canvas implements Runnable{
 	public synchronized void stop() {
 		try {
 			thread.join();
-			running = false;
+			running = false; 
 		}
 		catch(Exception e){
 			e.printStackTrace();
@@ -73,7 +75,7 @@ public class Game extends Canvas implements Runnable{
 				render();
 			frames++;
 			
-			if(System.currentTimeMillis() - timer > 1000) {
+			if(System.currentTimeMillis() -  timer > 1000) {
 				timer += 1000;
 		//		System.out.println("FPS" + frames);
 				frames = 0;
@@ -84,6 +86,8 @@ public class Game extends Canvas implements Runnable{
 	
 	private void tick() {
 		handler.tick();
+		hud.tick();
+		spawner.tick();
 	}
 	
 	private void render() {
