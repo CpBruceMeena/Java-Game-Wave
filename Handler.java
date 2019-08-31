@@ -9,17 +9,6 @@ public class Handler {
 	
 	public void tick() {
 		for(int i = 0; i<object.size(); i++) {
-			GameObject tempObject = object.get(i);package com.tutorial.main;
-
-import java.awt.Graphics;
-import java.util.LinkedList;
-
-public class Handler {
-	
-	LinkedList<GameObject> object = new LinkedList<GameObject>();
-	
-	public void tick() {
-		for(int i = 0; i<object.size(); i++) {
 			GameObject tempObject = object.get(i);
 			
 			tempObject.tick();
@@ -40,25 +29,15 @@ public class Handler {
 	public void removeObject(GameObject object) {
 		this.object.remove(object);
 	}
-}
-
-			
-			tempObject.tick();
-		}
-	}
 	
-	public void render(Graphics g) {
+	public void clearEnemys() {
 		for(int i =0; i<object.size(); i++) {
 			GameObject tempObject = object.get(i);
-			tempObject.render(g);
+
+			if(tempObject.getId() == ID.Player) {
+				 object.clear();
+				 object.add(new Player((int) tempObject.getX(), (int)tempObject.getY(), ID.Player, this));
+			}
 		}
-	}
-	
-	public void addObject(GameObject object) {
-		this.object.add(object);
-	}
-	
-	public void removeObject(GameObject object) {
-		this.object.remove(object);
 	}
 }
