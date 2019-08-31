@@ -31,11 +31,11 @@ public class Game extends Canvas implements Runnable{
 
 		spawner = new Spawn(handler, hud);
 		
-		r = new Random();
+		r = new Random(); 
 		
 		handler.addObject(new Player(WIDTH/2 - 32, HEIGHT/2 - 32, ID.Player, handler));	
-		handler.addObject(new BasicEnemy(r.nextInt(WIDTH), r.nextInt(HEIGHT), ID.BasicEnemy, handler));	
- 	} 
+	  	handler.addObject(new BasicEnemy(r.nextInt(Game.WIDTH), r.nextInt(Game.HEIGHT), ID.EnemyBoss, handler));
+    	} 
 	
 	public synchronized void start() {
 		thread = new Thread(this);	 
@@ -99,10 +99,10 @@ public class Game extends Canvas implements Runnable{
 		
 		g.setColor(Color.black);
 		g.fillRect(0, 0, WIDTH, HEIGHT);
-		
+		 
 		handler.render(g);
 		
-		hud.render(g);
+		hud.render(g); 
 		
 		g.dispose();
 		bs.show();   
