@@ -39,10 +39,12 @@ I'll give the description of the source files in the alphabetical order.
 15. HUD = This is the display file. It contains the code which helps us to see the score and the level that is actually present on the game screen. 
 
 16. ID = This contains the id of the game objects that we are going to use in our game, i.e., we are using enumeration for this purpose, we have player, basicenemy, hardenemy, fastenemy, smartenemy as our ids.
-
+ 
 I'm providing a summary below to understand, how the game is actually created, and how you should proceed.
 First of all we need to create the main file, that is the Game file, then we need to create the window file, which allows us to run the game in the window. After that we move on to the handler and gameobjects file, using which we can create the enemies and the player. 
 (Note: The handler, player, menu, and some other files needs to continuously updated, as all the files are linked to each other.) 
 Now, moving on to the next things, we create the player and the basic enemy, here basic enemy works as a outline for all the types of enmies that we are trying to create. In the same file, we code the description of player and enemy, how they look like, how they move and their restictions on the screen, i.e., they cannot go out of the window frame. Now using the code for basic enemy, we can create all the other types of enemies that we need in our game, so the difficulty can be raised as the level and score increases. We are creating the trail file, because we want our game to look like wave, means when the player and the enemies move they should leave a trail. Now we move on to the HUD file, which helps us to keep the track of the score and level, which will be used to add the number of enemies in the game. As we have created the HUD file, which helps us to keep the track of the score and the level, now we need to create the spawn file, which will be used to update the game when the difficulty increases and the level increases. 
 Now all the required files are created, then we need to create the menu file, which will contain the options like game, help and quit, Next, we need to define the mouse settings to change the screen when someone clicks on the button. In general, we are trying to create the states of the game, i.e., the end state, pause state, help, and the game state. In the game state, we have created two types, one is Normal and the other one is Hard, they basically differ in the type of enemies they contain. After that we need to set our game state, as what will happen when our player health will reach to zero, means our game should terminate.
 We need to keep updating the changes in all the required files, as all are linked. 
+
+
