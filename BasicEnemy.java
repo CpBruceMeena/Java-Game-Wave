@@ -13,6 +13,7 @@ public class BasicEnemy extends GameObject{
 	public BasicEnemy(int x, int y, ID id, Handler handler) {
 		super(x, y, id);
 		this.handler = handler;  
+	
 		valX = 5.0f;
 		valY = 5.0f;
 	}
