@@ -12,7 +12,7 @@ public class EnemyBoss extends GameObject{
 	
 	Random r = new Random();
 	
-	private int timer = 80;
+	private int timer = 50;
 	private int timer2 = 50;
 	
 	public EnemyBoss(int x, int y, ID id, Handler handler) {
@@ -42,7 +42,7 @@ public class EnemyBoss extends GameObject{
 		if(timer2 <= 0) {
 			if(valX == 0) valX = 3.0f;
 			if(valX > 0)
-			valX += 0.005f;
+				valX += 0.005f;
 			else if(valX < 0) valX -= 0.005;
 			
 			
@@ -51,7 +51,6 @@ public class EnemyBoss extends GameObject{
 			int spawn = r.nextInt(10);
 			if(spawn == 0) handler.addObject(new EnemyBossBullet((int)x + 48, (int)y + 48, ID.BasicEnemy, handler));
 		}
-		
 //	  	if(y <= 0 || y>=Game.HEIGHT - 60) valY *= -1;
 		if(x <= 0 || x>=Game.WIDTH - 96) valX *= -1;
 		
