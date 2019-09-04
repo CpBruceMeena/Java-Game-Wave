@@ -49,7 +49,7 @@ We need to keep updating the changes in all the required files, as all are linke
 
 
 Below are series of screenshots of the game
-![Screenshot (7)](https://user-images.githubusercontent.com/39619151/64247596-d294f980-cf2c-11e9-8297-637b8816ba0d.png =250x250)
+![Screenshot (7)](https://user-images.githubusercontent.com/39619151/64247596-d294f980-cf2c-11e9-8297-637b8816ba0d.png )
 ![Screenshot (8)](https://user-images.githubusercontent.com/39619151/64247597-d32d9000-cf2c-11e9-9f6d-3384b8ee9642.png )
 ![Screenshot (9)](https://user-images.githubusercontent.com/39619151/64247598-d32d9000-cf2c-11e9-8c0e-35f9f02b682e.png )
 ![Screenshot (10)](https://user-images.githubusercontent.com/39619151/64247599-d3c62680-cf2c-11e9-9c73-5f2945991795.png )
